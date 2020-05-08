@@ -23,6 +23,8 @@ def extract_videos(source:str, dest_folder:str):
             if is_video(f):
                 os.makedirs(path.join('../'+dest_folder,cp[2:]),exist_ok=True)
                 shutil.move(path.join(cp,f),path.join('../'+dest_folder,cp[2:]))
+        if len(os.listdir(cp) ) == 0:
+            os.rmdir(cp)
 
 # extract_videos(source_folder,dest_folder)                
 
